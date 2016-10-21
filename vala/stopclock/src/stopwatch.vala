@@ -28,6 +28,8 @@ namespace StopWatch {
         private Gtk.Button button_startstop;
         private GLib.Timer timer;
         private bool cleared;
+        private Gtk.ListStore laplist;
+        private Gtk.TreeIter iter;
         
         public StopWatch (Gtk.Orientation orientation, int spacing) {
             Object(orientation: orientation, spacing: spacing);
@@ -41,21 +43,27 @@ namespace StopWatch {
             readout = new Gtk.Label("");  
             readout.get_style_context().add_class("h1");
             miliseconds = new Gtk.Label("");
-            miliseconds.get_style_context().add_class("h3");
-            miliseconds.set_valign(Gtk.Align.BASELINE);
+            miliseconds.get_style_context().add_class("h2");
             
             timer = new GLib.Timer();
             
-            laps = new Gtk.TreeView ();
+            laplist = new Gtk.ListStore (2, typeof (string), typeof (string));
+            
+            laps = new Gtk.TreeView.with_model ( laplist );
             Gtk.CellRendererText cell = new Gtk.CellRendererText ();
             laps.insert_column_with_attributes (-1, "Lap", cell, "text", 0);
             laps.insert_column_with_attributes (-1, "Time", cell, "text", 0);
             
+            
             button_startstop = new Gtk.Button.with_label ("Start");
+            button_startstop.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             button_startstop.clicked.connect (start_stop);
+            
             var button_lap = new Gtk.Button.with_label ("Lap");
             button_lap.clicked.connect (lap);
+            
             var button_reset = new Gtk.Button.with_label ("Reset");
+            button_reset.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             button_reset.clicked.connect (clear);
             
             readout_box.add (readout);
@@ -98,7 +106,11 @@ namespace StopWatch {
         }
         
         private void lap () {
-            stdout.printf("butts!~");
+            int h, m, s, ms = 0;
+            Utils.time_to_hms (timer.elapsed (), out h, out m, out s, out ms);
+            string elapsed = @"$h:$m:$s.$ms";
+            laplist.append ( out iter );
+            laplist.set ( iter, 0, elapsed, 1, elapsed );
         }
         
         private bool update () {

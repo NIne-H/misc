@@ -27,6 +27,8 @@ namespace StopClock {
             this.set_position (Gtk.WindowPosition.CENTER);
             //this.set_default_size (350, 200);
             this.destroy.connect (Gtk.main_quit);
+            this.get_style_context ().add_class ("rounded");
+            
             var headerbar = new Gtk.HeaderBar();
             this.set_titlebar (headerbar);
             headerbar.set_title ("StopClock");
@@ -62,9 +64,11 @@ namespace StopClock {
             selector.stack = view;
             selector.halign = Gtk.Align.CENTER;
             selector.set_border_width (12);
+            
             layout.pack_start (selector, false, false, 0);
             layout.pack_end (view, true, true, 0);
             add (layout);
+            
             show_all();
             Gtk.main ();
         }

@@ -17,6 +17,8 @@ The implementation currently abuses Posix.system() in ways that would make you w
 ##StopClock
 ###highly unfinished desktop timer
 
+![screenshot](https://github.com/Nine-H/misc/raw/master/screenshots/stopclock.png)
+
 I needed a clock when no good option existed. This got the job done but the advanced features and sexy design never happened. Stay tuned.
 
 #./shell

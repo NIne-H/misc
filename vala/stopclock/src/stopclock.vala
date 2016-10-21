@@ -28,7 +28,7 @@ namespace StopClock {
             app_icon = "stopclock";
             app_launcher = "stopclock.desktop";
             
-            about_authors = { "Aneurin Hall <aneurin.hall@gmail.com>" };           
+            about_authors = { "Nine H <nine.gentooman@gmail.com>" };           
         }
         
         public StopClockApp () {
