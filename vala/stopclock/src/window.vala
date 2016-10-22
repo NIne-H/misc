@@ -25,7 +25,7 @@ namespace StopClock {
             // window specifics
             this.title = "StopClock";
             this.set_position (Gtk.WindowPosition.CENTER);
-            //this.set_default_size (350, 200);
+            this.set_default_size (350, 500);
             this.destroy.connect (Gtk.main_quit);
             this.get_style_context ().add_class ("rounded");
             

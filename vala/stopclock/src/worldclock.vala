@@ -17,12 +17,12 @@
 
 using Gtk;
 namespace StopClock {
-namespace WorldClock {
-    public class WorldClock : Gtk.Box {
-        public WorldClock (Gtk.Orientation orientation, int spacing) {
-            Object(orientation: orientation, spacing: spacing);
-            this.add (new Gtk.Label ("World Clocks"));
+    namespace WorldClock {
+        public class WorldClock : Gtk.Box {
+            public WorldClock (Gtk.Orientation orientation, int spacing) {
+                Object(orientation: orientation, spacing: spacing);
+                this.add (new Gtk.Label ("World Clocks"));
+            }
         }
     }
-}
 }
