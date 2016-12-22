@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+8da7332f1ff5bd87f84a57032abe1a2c src/countdown.c
+df4582efff4bf5e16cfe36b671008ccf stopclock_valac.stamp

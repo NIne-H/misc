@@ -1,0 +1,7 @@
+/home/nine/Projects/misc/vala/stopclock/build/CMakeFiles/install.dir
+/home/nine/Projects/misc/vala/stopclock/build/CMakeFiles/list_install_components.dir
+/home/nine/Projects/misc/vala/stopclock/build/CMakeFiles/rebuild_cache.dir
+/home/nine/Projects/misc/vala/stopclock/build/CMakeFiles/stopclock.dir
+/home/nine/Projects/misc/vala/stopclock/build/CMakeFiles/edit_cache.dir
+/home/nine/Projects/misc/vala/stopclock/build/CMakeFiles/install/strip.dir
+/home/nine/Projects/misc/vala/stopclock/build/CMakeFiles/install/local.dir

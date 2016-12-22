@@ -34,6 +34,9 @@ namespace StopClock {
         public StopClockApp () {
             Granite.Services.Logger.initialize ("StopClockApp");
             Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
+        }
+        
+        public override void activate () {
             new Window ();
         }
 
